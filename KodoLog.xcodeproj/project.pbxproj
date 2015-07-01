@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		240940001B44359000A94056 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24093FFF1B44359000A94056 /* AppDelegate.swift */; };
+		240940021B44359000A94056 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240940011B44359000A94056 /* ViewController.swift */; };
+		240940051B44359000A94056 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 240940031B44359000A94056 /* Main.storyboard */; };
+		240940071B44359000A94056 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 240940061B44359000A94056 /* Images.xcassets */; };
+		2409400A1B44359000A94056 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 240940081B44359000A94056 /* LaunchScreen.xib */; };
+		240940161B44359000A94056 /* KodoLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240940151B44359000A94056 /* KodoLogTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		240940101B44359000A94056 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 24093FF21B44359000A94056 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 24093FF91B44359000A94056;
+			remoteInfo = KodoLog;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		24093FFA1B44359000A94056 /* KodoLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KodoLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		24093FFE1B44359000A94056 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		24093FFF1B44359000A94056 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		240940011B44359000A94056 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		240940041B44359000A94056 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		240940061B44359000A94056 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		240940091B44359000A94056 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		2409400F1B44359000A94056 /* KodoLogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KodoLogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		240940141B44359000A94056 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		240940151B44359000A94056 /* KodoLogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KodoLogTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		24093FF71B44359000A94056 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2409400C1B44359000A94056 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		24093FF11B44359000A94056 = {
+			isa = PBXGroup;
+			children = (
+				24093FFC1B44359000A94056 /* KodoLog */,
+				240940121B44359000A94056 /* KodoLogTests */,
+				24093FFB1B44359000A94056 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		24093FFB1B44359000A94056 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				24093FFA1B44359000A94056 /* KodoLog.app */,
+				2409400F1B44359000A94056 /* KodoLogTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		24093FFC1B44359000A94056 /* KodoLog */ = {
+			isa = PBXGroup;
+			children = (
+				24093FFF1B44359000A94056 /* AppDelegate.swift */,
+				240940011B44359000A94056 /* ViewController.swift */,
+				240940031B44359000A94056 /* Main.storyboard */,
+				240940061B44359000A94056 /* Images.xcassets */,
+				240940081B44359000A94056 /* LaunchScreen.xib */,
+				24093FFD1B44359000A94056 /* Supporting Files */,
+			);
+			path = KodoLog;
+			sourceTree = "<group>";
+		};
+		24093FFD1B44359000A94056 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				24093FFE1B44359000A94056 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		240940121B44359000A94056 /* KodoLogTests */ = {
+			isa = PBXGroup;
+			children = (
+				240940151B44359000A94056 /* KodoLogTests.swift */,
+				240940131B44359000A94056 /* Supporting Files */,
+			);
+			path = KodoLogTests;
+			sourceTree = "<group>";
+		};
+		240940131B44359000A94056 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				240940141B44359000A94056 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		24093FF91B44359000A94056 /* KodoLog */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 240940191B44359000A94056 /* Build configuration list for PBXNativeTarget "KodoLog" */;
+			buildPhases = (
+				24093FF61B44359000A94056 /* Sources */,
+				24093FF71B44359000A94056 /* Frameworks */,
+				24093FF81B44359000A94056 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KodoLog;
+			productName = KodoLog;
+			productReference = 24093FFA1B44359000A94056 /* KodoLog.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2409400E1B44359000A94056 /* KodoLogTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2409401C1B44359000A94056 /* Build configuration list for PBXNativeTarget "KodoLogTests" */;
+			buildPhases = (
+				2409400B1B44359000A94056 /* Sources */,
+				2409400C1B44359000A94056 /* Frameworks */,
+				2409400D1B44359000A94056 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				240940111B44359000A94056 /* PBXTargetDependency */,
+			);
+			name = KodoLogTests;
+			productName = KodoLogTests;
+			productReference = 2409400F1B44359000A94056 /* KodoLogTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		24093FF21B44359000A94056 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = KudoShunsuke;
+				TargetAttributes = {
+					24093FF91B44359000A94056 = {
+						CreatedOnToolsVersion = 6.3.2;
+					};
+					2409400E1B44359000A94056 = {
+						CreatedOnToolsVersion = 6.3.2;
+						TestTargetID = 24093FF91B44359000A94056;
+					};
+				};
+			};
+			buildConfigurationList = 24093FF51B44359000A94056 /* Build configuration list for PBXProject "KodoLog" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 24093FF11B44359000A94056;
+			productRefGroup = 24093FFB1B44359000A94056 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				24093FF91B44359000A94056 /* KodoLog */,
+				2409400E1B44359000A94056 /* KodoLogTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		24093FF81B44359000A94056 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				240940051B44359000A94056 /* Main.storyboard in Resources */,
+				2409400A1B44359000A94056 /* LaunchScreen.xib in Resources */,
+				240940071B44359000A94056 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2409400D1B44359000A94056 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		24093FF61B44359000A94056 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				240940021B44359000A94056 /* ViewController.swift in Sources */,
+				240940001B44359000A94056 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2409400B1B44359000A94056 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				240940161B44359000A94056 /* KodoLogTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		240940111B44359000A94056 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 24093FF91B44359000A94056 /* KodoLog */;
+			targetProxy = 240940101B44359000A94056 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		240940031B44359000A94056 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				240940041B44359000A94056 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		240940081B44359000A94056 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				240940091B44359000A94056 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		240940171B44359000A94056 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		240940181B44359000A94056 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2409401A1B44359000A94056 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KodoLog/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2409401B1B44359000A94056 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = KodoLog/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		2409401D1B44359000A94056 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KodoLogTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KodoLog.app/KodoLog";
+			};
+			name = Debug;
+		};
+		2409401E1B44359000A94056 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = KodoLogTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KodoLog.app/KodoLog";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		24093FF51B44359000A94056 /* Build configuration list for PBXProject "KodoLog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				240940171B44359000A94056 /* Debug */,
+				240940181B44359000A94056 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		240940191B44359000A94056 /* Build configuration list for PBXNativeTarget "KodoLog" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2409401A1B44359000A94056 /* Debug */,
+				2409401B1B44359000A94056 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		2409401C1B44359000A94056 /* Build configuration list for PBXNativeTarget "KodoLogTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2409401D1B44359000A94056 /* Debug */,
+				2409401E1B44359000A94056 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 24093FF21B44359000A94056 /* Project object */;
+}
