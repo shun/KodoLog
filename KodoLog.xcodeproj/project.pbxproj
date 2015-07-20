@@ -18,6 +18,8 @@
 		240940251B44360B00A94056 /* MotionActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240940241B44360B00A94056 /* MotionActivityController.swift */; };
 		2453C6551B5D29600090810A /* AppMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453C6541B5D29600090810A /* AppMainController.swift */; };
 		2453C6571B5D29B30090810A /* FileUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453C6561B5D29B30090810A /* FileUploader.swift */; };
+		2453C65A1B5D34620090810A /* mainico_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 2453C6591B5D34620090810A /* mainico_256x256.png */; };
+		2453C65C1B5D393D0090810A /* mainico_120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 2453C65B1B5D393D0090810A /* mainico_120x120.png */; };
 		24702E121B5543D400B8D561 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24702E111B5543D400B8D561 /* Utility.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,8 @@
 		240940241B44360B00A94056 /* MotionActivityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MotionActivityController.swift; path = Sensor/MotionActivityController.swift; sourceTree = "<group>"; };
 		2453C6541B5D29600090810A /* AppMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppMainController.swift; sourceTree = "<group>"; };
 		2453C6561B5D29B30090810A /* FileUploader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUploader.swift; sourceTree = "<group>"; };
+		2453C6591B5D34620090810A /* mainico_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mainico_256x256.png; path = Resources/mainico_256x256.png; sourceTree = "<group>"; };
+		2453C65B1B5D393D0090810A /* mainico_120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mainico_120x120.png; path = Resources/mainico_120x120.png; sourceTree = "<group>"; };
 		24702E111B5543D400B8D561 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +93,7 @@
 		24093FFC1B44359000A94056 /* KodoLog */ = {
 			isa = PBXGroup;
 			children = (
+				2453C6581B5D33EE0090810A /* Resources */,
 				24093FFF1B44359000A94056 /* AppDelegate.swift */,
 				2453C6541B5D29600090810A /* AppMainController.swift */,
 				2453C6561B5D29B30090810A /* FileUploader.swift */,
@@ -136,6 +141,15 @@
 				240940241B44360B00A94056 /* MotionActivityController.swift */,
 			);
 			name = Sensor;
+			sourceTree = "<group>";
+		};
+		2453C6581B5D33EE0090810A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2453C65B1B5D393D0090810A /* mainico_120x120.png */,
+				2453C6591B5D34620090810A /* mainico_256x256.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -220,7 +234,9 @@
 			files = (
 				240940051B44359000A94056 /* Main.storyboard in Resources */,
 				2409400A1B44359000A94056 /* LaunchScreen.xib in Resources */,
+				2453C65A1B5D34620090810A /* mainico_256x256.png in Resources */,
 				240940071B44359000A94056 /* Images.xcassets in Resources */,
+				2453C65C1B5D393D0090810A /* mainico_120x120.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
