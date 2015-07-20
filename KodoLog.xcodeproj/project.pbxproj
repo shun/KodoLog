@@ -13,6 +13,12 @@
 		240940071B44359000A94056 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 240940061B44359000A94056 /* Images.xcassets */; };
 		2409400A1B44359000A94056 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 240940081B44359000A94056 /* LaunchScreen.xib */; };
 		240940161B44359000A94056 /* KodoLogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240940151B44359000A94056 /* KodoLogTests.swift */; };
+		240940211B4435E100A94056 /* SensorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240940201B4435E100A94056 /* SensorManager.swift */; };
+		240940231B4435F400A94056 /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240940221B4435F400A94056 /* LocationController.swift */; };
+		240940251B44360B00A94056 /* MotionActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240940241B44360B00A94056 /* MotionActivityController.swift */; };
+		2453C6551B5D29600090810A /* AppMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453C6541B5D29600090810A /* AppMainController.swift */; };
+		2453C6571B5D29B30090810A /* FileUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453C6561B5D29B30090810A /* FileUploader.swift */; };
+		24702E121B5543D400B8D561 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24702E111B5543D400B8D561 /* Utility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +42,12 @@
 		2409400F1B44359000A94056 /* KodoLogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KodoLogTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		240940141B44359000A94056 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		240940151B44359000A94056 /* KodoLogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KodoLogTests.swift; sourceTree = "<group>"; };
+		240940201B4435E100A94056 /* SensorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SensorManager.swift; path = Sensor/SensorManager.swift; sourceTree = "<group>"; };
+		240940221B4435F400A94056 /* LocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationController.swift; path = Sensor/LocationController.swift; sourceTree = "<group>"; };
+		240940241B44360B00A94056 /* MotionActivityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MotionActivityController.swift; path = Sensor/MotionActivityController.swift; sourceTree = "<group>"; };
+		2453C6541B5D29600090810A /* AppMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppMainController.swift; sourceTree = "<group>"; };
+		2453C6561B5D29B30090810A /* FileUploader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUploader.swift; sourceTree = "<group>"; };
+		24702E111B5543D400B8D561 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,11 +90,15 @@
 			isa = PBXGroup;
 			children = (
 				24093FFF1B44359000A94056 /* AppDelegate.swift */,
-				240940011B44359000A94056 /* ViewController.swift */,
-				240940031B44359000A94056 /* Main.storyboard */,
+				2453C6541B5D29600090810A /* AppMainController.swift */,
+				2453C6561B5D29B30090810A /* FileUploader.swift */,
 				240940061B44359000A94056 /* Images.xcassets */,
 				240940081B44359000A94056 /* LaunchScreen.xib */,
+				240940031B44359000A94056 /* Main.storyboard */,
+				2409401F1B4435B100A94056 /* Sensor */,
 				24093FFD1B44359000A94056 /* Supporting Files */,
+				24702E111B5543D400B8D561 /* Utility.swift */,
+				240940011B44359000A94056 /* ViewController.swift */,
 			);
 			path = KodoLog;
 			sourceTree = "<group>";
@@ -110,6 +126,16 @@
 				240940141B44359000A94056 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2409401F1B4435B100A94056 /* Sensor */ = {
+			isa = PBXGroup;
+			children = (
+				240940201B4435E100A94056 /* SensorManager.swift */,
+				240940221B4435F400A94056 /* LocationController.swift */,
+				240940241B44360B00A94056 /* MotionActivityController.swift */,
+			);
+			name = Sensor;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,7 +238,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				240940231B4435F400A94056 /* LocationController.swift in Sources */,
+				2453C6571B5D29B30090810A /* FileUploader.swift in Sources */,
+				240940251B44360B00A94056 /* MotionActivityController.swift in Sources */,
+				2453C6551B5D29600090810A /* AppMainController.swift in Sources */,
+				24702E121B5543D400B8D561 /* Utility.swift in Sources */,
 				240940021B44359000A94056 /* ViewController.swift in Sources */,
+				240940211B4435E100A94056 /* SensorManager.swift in Sources */,
 				240940001B44359000A94056 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -340,9 +372,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = KodoLog/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SWIFT_MODULE_NAME)-Swift.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -350,9 +387,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = KodoLog/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INSTALL_OBJC_HEADER = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "$(SWIFT_MODULE_NAME)-Swift.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
 			};
 			name = Release;
 		};
@@ -409,6 +450,7 @@
 				2409401B1B44359000A94056 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2409401C1B44359000A94056 /* Build configuration list for PBXNativeTarget "KodoLogTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +459,7 @@
 				2409401E1B44359000A94056 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
