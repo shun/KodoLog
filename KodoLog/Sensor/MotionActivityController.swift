@@ -9,11 +9,21 @@
 import UIKit
 import CoreMotion
 
+enum ACTIVITYTYPE:Int {
+    case INVALID
+    case STATIONARY
+    case WALKING
+    case RUNNING
+    case AUTOMOTIVE
+    case CYCLING
+    case UNKNOWN
+}
+
 class MotionActivityController: NSObject {
     private var m_motionactivitymanager: CMMotionActivityManager?
     private var m_pedometer: CMPedometer?
-    private var m_activitytype: Int = 0
-    internal var activitytype: Int {
+    private var m_activitytype: ACTIVITYTYPE = .INVALID
+    internal var activitytype: ACTIVITYTYPE {
         get {return m_activitytype}
     }
     private var m_steps: Int = 0
@@ -45,24 +55,24 @@ class MotionActivityController: NSObject {
         m_motionactivitymanager = CMMotionActivityManager()
         m_motionactivitymanager?.startActivityUpdatesToQueue(NSOperationQueue.mainQueue()) {(activity:CMMotionActivity!) -> Void in
             dispatch_async(dispatch_get_main_queue(), {
-                var activitytype: Int = 0
+                var activitytype: ACTIVITYTYPE = .INVALID
                 if(activity.stationary == true){
-                    activitytype = 0x00000001
+                    activitytype = .STATIONARY
                 }
                 if (activity.walking == true){
-                    activitytype = 0x00000010
+                    activitytype = .WALKING
                 }
                 if (activity.running == true){
-                    activitytype = 0x00000100
+                    activitytype = .RUNNING
                 }
                 if (activity.automotive == true){
-                    activitytype = 0x00001000
+                    activitytype = .AUTOMOTIVE
                 }
                 if (activity.cycling == true){
-                    activitytype = 0x00010000
+                    activitytype = .CYCLING
                 }
                 if (activity.unknown == true) {
-                    activitytype = 0x00100000
+                    activitytype = .UNKNOWN
                 }
                 self.m_activitytype = activitytype
             });

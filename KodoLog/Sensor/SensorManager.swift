@@ -19,6 +19,9 @@ class SensorManager: NSObject {
     private var m_docrootpath: String?
     private var m_logdate: String = ""
     private var m_currentlogdate: String = ""
+    private var m_lastlocation: CLLocation?
+    private var m_lastactivitytype: ACTIVITYTYPE = .INVALID
+    private var m_stationarycounter: Int64 = 0
 
 // MARK: methord
     override init() {
@@ -102,6 +105,16 @@ class SensorManager: NSObject {
             writeHeader(ofs)
         }
 
+        // 滞在中か
+        if (isStationary()) {
+            m_stationarycounter++
+            // 滞在中の場合はログを出力しない
+            return
+        }
+
+        if (didMoveCoordinates()) {
+            // 緯度経度が前回と変わっていない場合はログを出力しない
+        }
         let curdatetime = Utility.getDateTimeString(now, format: "yyyy-MM-dd hh:mm:ss") + ","
         ofs.write(curdatetime, maxLength: count(curdatetime))
         writeLocationLog(ofs)
@@ -112,22 +125,51 @@ class SensorManager: NSObject {
         ofs.close()
     }
 
-    func writeLocationLog(ofs:NSOutputStream) {
+    func isStationary() -> Bool {
+        var ret: Bool = false
+        if ((m_motionactivitycontroller?.activitytype == .INVALID) && (m_motionactivitycontroller?.activitytype == .UNKNOWN)) {
+            // 取得した種別が不明な場合は前回の有効値を使用する
+            if (m_lastactivitytype == .STATIONARY) {
+                ret = true
+            }
+            else {
+                // ずっと不明 or 無効な場合なとりあえず動いているとしておく
+                ret = false
+            }
+        }
+        else if (m_motionactivitycontroller?.activitytype == .STATIONARY) {
+            ret = true
+        }
+        return ret
+    }
+
+    func didMoveCoordinates() -> Bool {
         var loc = m_locationcontroller!.getLastLocation()
         if (loc == nil) {
-            return
+            return false
         }
-        let gpstime = Utility.getDateTimeString(loc.timestamp, format: "yyyy-MM-dd hh:mm:ss")
+
+        // 前回と同じであればログ出力をしない
+        if ((m_lastlocation?.coordinate.latitude == loc.coordinate.latitude) && (m_lastlocation?.coordinate.latitude == loc.coordinate.longitude)) {
+            return false
+        }
+
+        m_lastlocation = loc
+        return true
+    }
+
+    func writeLocationLog(ofs:NSOutputStream) {
+        let gpstime = Utility.getDateTimeString(m_lastlocation!.timestamp, format: "yyyy-MM-dd hh:mm:ss")
 
         let logstr = gpstime + "," +
-            String(format:"%f,", loc.coordinate.latitude) +
-            String(format:"%f,", loc.coordinate.longitude) +
-            String(format:"%f,", loc.altitude) +
-            String(format:"%f,", loc.horizontalAccuracy) +
-            String(format:"%f,", loc.verticalAccuracy) +
+            String(format:"%f,", m_lastlocation!.coordinate.latitude) +
+            String(format:"%f,", m_lastlocation!.coordinate.longitude) +
+            String(format:"%f,", m_lastlocation!.altitude) +
+            String(format:"%f,", m_lastlocation!.horizontalAccuracy) +
+            String(format:"%f,", m_lastlocation!.verticalAccuracy) +
             String(format:"%f,", m_locationcontroller!.gpsaccuracy) +
-            String(format:"%f,", loc.course) +
-            String(format:"%f,", loc.speed) +
+            String(format:"%f,", m_lastlocation!.course) +
+            String(format:"%f,", m_lastlocation!.speed) +
             String(format:"%f,", m_locationcontroller!.distancefilter) +
             String(format:"%f,", m_locationcontroller!.headingfilter) +
             String(format:"%d,", m_locationcontroller!.activitytype.rawValue)
@@ -138,7 +180,7 @@ class SensorManager: NSObject {
     func writeMotionActivityLog(ofs: NSOutputStream) {
         var logstr = String(format:"%d,", m_motionactivitycontroller!.steps) +
             String(format:"%d,", m_motionactivitycontroller!.distance) +
-            String(format:"%d,", m_motionactivitycontroller!.activitytype) +
+            String(format:"%d,", m_motionactivitycontroller!.activitytype.rawValue) +
             String(format:"%d,", m_motionactivitycontroller!.floorsAscended) +
             String(format:"%d,", m_motionactivitycontroller!.floorsDescended)
 
