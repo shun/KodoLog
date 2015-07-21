@@ -111,6 +111,15 @@ class LocationController: NSObject, CLLocationManagerDelegate {
         m_locationmanager?.stopUpdatingLocation()
     }
 
+    func startMonitoringSignificantLocation() {
+        m_locationmanager?.startMonitoringSignificantLocationChanges()
+    }
+
+    func stopMonitoringSignificantLocation() {
+        m_locationmanager?.stopMonitoringSignificantLocationChanges()
+    }
+
+
     func getLastLocation() -> CLLocation! {
         return m_locationmanager?.location;
     }

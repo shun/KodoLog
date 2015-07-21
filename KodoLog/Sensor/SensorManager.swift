@@ -9,6 +9,12 @@
 import UIKit
 import CoreLocation
 
+enum LOCATION_STS: Int {
+    case STOP
+    case STANDARD
+    case SIGNIFICANT
+}
+
 class SensorManager: NSObject {
 // MARK: member
     private static let instance = SensorManager()
@@ -22,6 +28,8 @@ class SensorManager: NSObject {
     private var m_lastlocation: CLLocation?
     private var m_lastactivitytype: ACTIVITYTYPE = .INVALID
     private var m_stationarycounter: Int64 = 0
+    private var m_movingcounter: Int64 = 0
+    private var m_locationsts: LOCATION_STS = .STOP
 
 // MARK: methord
     override init() {
@@ -34,8 +42,8 @@ class SensorManager: NSObject {
         conditions["distancefilter"] = 10.0 as Double
         m_locationcontroller = LocationController()
         m_locationcontroller?.setup(conditions)
-        m_locationcontroller!.startUpdateLocation()
         m_motionactivitycontroller = MotionActivityController()
+        setLocationStatus(.STANDARD)
 
         m_timer = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: Selector("timercallback"), userInfo: nil, repeats: true)
     }
@@ -44,6 +52,17 @@ class SensorManager: NSObject {
         return m_wroteheader
     }
 
+    func setLocationStatus(sts:LOCATION_STS) {
+        if (sts == .STANDARD) {
+            m_locationcontroller?.startUpdateLocation()
+            m_locationcontroller?.stopMonitoringSignificantLocation()
+        }
+        else if (sts == .SIGNIFICANT) {
+            m_locationcontroller?.startMonitoringSignificantLocation()
+            m_locationcontroller?.stopUpdateLocation()
+        }
+        m_locationsts = sts
+    }
     func writeHeader(ofs:NSOutputStream) {
         let header: String = "" +
             "Time," +
@@ -108,12 +127,28 @@ class SensorManager: NSObject {
         // 滞在中か
         if (isStationary()) {
             m_stationarycounter++
+            m_movingcounter = 0
+
+            if ((m_locationsts != .SIGNIFICANT) && (m_stationarycounter >= 10 * 60)) {
+                // 10分静止していた場合はSignificantLocationに遷移
+                setLocationStatus(.SIGNIFICANT)
+            }
             // 滞在中の場合はログを出力しない
             return
         }
+        else {
+            m_stationarycounter = 0
+            m_movingcounter++
 
-        if (didMoveCoordinates()) {
+            // 10秒以上動き続けててSignificant Locationの場合はStandard Locationに設定する
+            if ((m_movingcounter > 10) && (m_locationsts != .STANDARD)) {
+                setLocationStatus(.STANDARD)
+            }
+        }
+
+        if (!didMoveCoordinates()) {
             // 緯度経度が前回と変わっていない場合はログを出力しない
+            return
         }
         let curdatetime = Utility.getDateTimeString(now, format: "yyyy-MM-dd hh:mm:ss") + ","
         ofs.write(curdatetime, maxLength: count(curdatetime))
@@ -127,7 +162,7 @@ class SensorManager: NSObject {
 
     func isStationary() -> Bool {
         var ret: Bool = false
-        if ((m_motionactivitycontroller?.activitytype == .INVALID) && (m_motionactivitycontroller?.activitytype == .UNKNOWN)) {
+        if ((m_motionactivitycontroller?.activitytype == .INVALID) || (m_motionactivitycontroller?.activitytype == .UNKNOWN)) {
             // 取得した種別が不明な場合は前回の有効値を使用する
             if (m_lastactivitytype == .STATIONARY) {
                 ret = true
