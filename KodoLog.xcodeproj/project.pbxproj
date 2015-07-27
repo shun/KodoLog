@@ -21,6 +21,7 @@
 		2453C65A1B5D34620090810A /* mainico_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 2453C6591B5D34620090810A /* mainico_256x256.png */; };
 		2453C65C1B5D393D0090810A /* mainico_120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 2453C65B1B5D393D0090810A /* mainico_120x120.png */; };
 		24702E121B5543D400B8D561 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24702E111B5543D400B8D561 /* Utility.swift */; };
+		24B89A031B66747100A9DC98 /* LogTrace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B89A021B66747100A9DC98 /* LogTrace.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		2453C6591B5D34620090810A /* mainico_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mainico_256x256.png; path = Resources/mainico_256x256.png; sourceTree = "<group>"; };
 		2453C65B1B5D393D0090810A /* mainico_120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mainico_120x120.png; path = Resources/mainico_120x120.png; sourceTree = "<group>"; };
 		24702E111B5543D400B8D561 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		24B89A021B66747100A9DC98 /* LogTrace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTrace.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		24093FFC1B44359000A94056 /* KodoLog */ = {
 			isa = PBXGroup;
 			children = (
+				24B89A011B66745C00A9DC98 /* Trace */,
 				2453C6581B5D33EE0090810A /* Resources */,
 				24093FFF1B44359000A94056 /* AppDelegate.swift */,
 				2453C6541B5D29600090810A /* AppMainController.swift */,
@@ -150,6 +153,14 @@
 				2453C6591B5D34620090810A /* mainico_256x256.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		24B89A011B66745C00A9DC98 /* Trace */ = {
+			isa = PBXGroup;
+			children = (
+				24B89A021B66747100A9DC98 /* LogTrace.swift */,
+			);
+			name = Trace;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				240940231B4435F400A94056 /* LocationController.swift in Sources */,
+				24B89A031B66747100A9DC98 /* LogTrace.swift in Sources */,
 				2453C6571B5D29B30090810A /* FileUploader.swift in Sources */,
 				240940251B44360B00A94056 /* MotionActivityController.swift in Sources */,
 				2453C6551B5D29600090810A /* AppMainController.swift in Sources */,
@@ -391,6 +403,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = KodoLog/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"OTHER_SWIFT_FLAGS[arch=*]" = "-DENABLE_XCODECOLORS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SWIFT_MODULE_NAME)-Swift.h";
