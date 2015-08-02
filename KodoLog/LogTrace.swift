@@ -33,7 +33,11 @@ class LogTrace: NSObject {
     }
 
     override init() {
-        self.m_tracelevel = .WARN
+#if DEBUG
+    self.m_tracelevel = .VERB
+#else
+    self.m_tracelevel = .WARN
+#endif
         super.init()
     }
 
