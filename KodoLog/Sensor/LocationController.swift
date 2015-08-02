@@ -11,77 +11,58 @@ import CoreLocation
 
 class LocationController: NSObject, CLLocationManagerDelegate {
 // MARK: local member
-    private var m_locationmanager: CLLocationManager?
+    private var m_locationmanager: CLLocationManager
     private var m_lastlocation: CLLocation?
     private var m_authorized: Bool = false
 
 // MARK: getter/setter
     var distancefilter: CLLocationDistance {
-        get { if let distancefilter = m_locationmanager?.distanceFilter {
-                return distancefilter
-            }
-            else {
-                return -1
-            }
-        }
+        get { return m_locationmanager.distanceFilter }
     }
 
     var headingfilter: CLLocationDegrees {
-        get { if let headingfilter = m_locationmanager?.headingFilter {
-            return headingfilter
-        }
-        else {
-            return -1
-            }
-        }
+        get { return m_locationmanager.headingFilter }
     }
 
     var activitytype: CLActivityType {
-        get { return m_locationmanager!.activityType
-        }
+        get { return m_locationmanager.activityType }
     }
 
     var gpsaccuracy: CLLocationAccuracy {
-        get { if let gpsaccuracy = m_locationmanager?.desiredAccuracy {
-                return gpsaccuracy
-            }
-            else {
-                return -1
-            }
-        }
+        get { return m_locationmanager.desiredAccuracy }
     }
 
 // MARK: method
     func setGPSAccuracy(gpsaccuracy:Int32) {
         switch(gpsaccuracy) {
             case 100:
-                m_locationmanager?.desiredAccuracy = kCLLocationAccuracyHundredMeters
+                m_locationmanager.desiredAccuracy = kCLLocationAccuracyHundredMeters
 
             case 1000:
-                m_locationmanager?.desiredAccuracy = kCLLocationAccuracyKilometer
+                m_locationmanager.desiredAccuracy = kCLLocationAccuracyKilometer
 
             case 3000:
-                m_locationmanager?.desiredAccuracy = kCLLocationAccuracyKilometer
+                m_locationmanager.desiredAccuracy = kCLLocationAccuracyKilometer
 
             case -1:
-                m_locationmanager?.desiredAccuracy = kCLLocationAccuracyBest
+                m_locationmanager.desiredAccuracy = kCLLocationAccuracyBest
 
             case -2:
-                m_locationmanager?.desiredAccuracy = kCLLocationAccuracyBestForNavigation
+                m_locationmanager.desiredAccuracy = kCLLocationAccuracyBestForNavigation
 
             case 10:
                 fallthrough
             default:
-                m_locationmanager?.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+                m_locationmanager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         }
     }
 
     override init() {
+        m_locationmanager = CLLocationManager()
         super.init()
 
-        m_locationmanager = CLLocationManager()
-        m_locationmanager?.delegate = self
-        m_locationmanager?.requestAlwaysAuthorization()
+        m_locationmanager.delegate = self
+        m_locationmanager.requestAlwaysAuthorization()
 
     }
 
@@ -90,38 +71,38 @@ class LocationController: NSObject, CLLocationManagerDelegate {
             self.setGPSAccuracy(gpsaccuracy.intValue)
         }
         if let pauselocationservice = conditions["pauselocationservice"] as? Bool {
-            m_locationmanager?.pausesLocationUpdatesAutomatically = pauselocationservice
+            m_locationmanager.pausesLocationUpdatesAutomatically = pauselocationservice
         }
         if let distancefilter = conditions["distancefilter"] as? Double {
-            m_locationmanager?.distanceFilter = distancefilter
+            m_locationmanager.distanceFilter = distancefilter
         }
 
     }
 
     func startUpdateLocation() {
         if (m_authorized) {
-            m_locationmanager?.startUpdatingLocation()
+            m_locationmanager.startUpdatingLocation()
         }
         else {
-            m_locationmanager?.requestAlwaysAuthorization()
+            m_locationmanager.requestAlwaysAuthorization()
         }
     }
 
     func stopUpdateLocation() {
-        m_locationmanager?.stopUpdatingLocation()
+        m_locationmanager.stopUpdatingLocation()
     }
 
     func startMonitoringSignificantLocation() {
-        m_locationmanager?.startMonitoringSignificantLocationChanges()
+        m_locationmanager.startMonitoringSignificantLocationChanges()
     }
 
     func stopMonitoringSignificantLocation() {
-        m_locationmanager?.stopMonitoringSignificantLocationChanges()
+        m_locationmanager.stopMonitoringSignificantLocationChanges()
     }
 
 
     func getLastLocation() -> CLLocation! {
-        return m_locationmanager?.location;
+        return m_locationmanager.location;
     }
 
     func locationManager(manager: CLLocationManager!, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
