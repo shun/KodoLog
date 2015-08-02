@@ -9,13 +9,13 @@
 import UIKit
 
 class AppMainController: NSObject {
-    private var m_sensormanager: SensorManager?
-    private var m_fileuploader: FileUploader?
+    private var m_sensormanager: SensorManager
+    private var m_fileuploader: FileUploader
 
     override init() {
+        m_sensormanager = SensorManager.sharedInstance;
+        m_fileuploader = FileUploader();
         super.init()
 
-        m_sensormanager = SensorManager();
-        m_fileuploader = FileUploader();
     }
 }

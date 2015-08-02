@@ -17,7 +17,6 @@ enum LOCATION_STS: Int {
 
 class SensorManager: NSObject {
 // MARK: member
-    private static let instance = SensorManager()
     private var m_locationcontroller: LocationController
     private var m_motionactivitycontroller: MotionActivityController
     private var m_timer: NSTimer?
@@ -31,8 +30,15 @@ class SensorManager: NSObject {
     private var m_movingcounter: Int64 = 0
     private var m_locationsts: LOCATION_STS = .STOP
 
+    class var sharedInstance:SensorManager {
+        struct Static {
+            static let instance = SensorManager()
+        }
+        return Static.instance
+    }
+
 // MARK: methord
-    override init() {
+    private override init() {
         m_locationcontroller = LocationController()
         m_motionactivitycontroller = MotionActivityController()
         super.init()
