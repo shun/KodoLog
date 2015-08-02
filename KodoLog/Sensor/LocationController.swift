@@ -118,6 +118,6 @@ class LocationController: NSObject, CLLocationManagerDelegate {
     }
 */
     func locationManager(manager: CLLocationManager!, didFailWithError error: NSError!) {
-        println("error")
+        LogTrace.sharedInstance.error(format: error.localizedDescription)
     }
 }
