@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMaps;
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        GMSServices.provideAPIKey("AIzaSyCk1umxJSurzYnImG-CeRQq7eXbQoyCBe4")
+
         UIDevice.currentDevice().batteryMonitoringEnabled = true
         sleep(2)
         m_maincontroller = AppMainController()
