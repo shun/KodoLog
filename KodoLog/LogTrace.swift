@@ -33,7 +33,7 @@ class LogTrace: NSObject {
     }
 
     override init() {
-        self.m_tracelevel = .DEBUG
+        self.m_tracelevel = .WARN
         super.init()
     }
 
@@ -78,6 +78,12 @@ class LogTrace: NSObject {
         }
         let now = Utility.getDateTimeString(NSDate(), format: "yyyy-MM-dd hh:mm:ss.SSSS")
         let filename = filepath.lastPathComponent
+        let tracelabel = [  "[VERB]  ",
+                            "[INFO]  ",
+                            "[DEBUG] ",
+                            "[WARN]  ",
+                            "[ERROR] "
+        ]
 #if ENABLE_XCODECOLORS
         let ESCAPE = "\u{001b}["
 
@@ -101,14 +107,14 @@ class LogTrace: NSObject {
             case .WARN:
                 fallthrough
             case .ERROR:
-                log = "\(ESCAPE)\(tracecolors[tracelevel.rawValue])\(now) \(filename)(\(lineno)): \(funcname): \(contents)\(RESET)"
+                log = "\(ESCAPE)\(tracecolors[tracelevel.rawValue])\(now) \(tracelabel[tracelevel.rawValue])\(filename)(\(lineno)): \(funcname): \(contents)\(RESET)"
 
             default:
-                log = "\(now) \(filename)(\(lineno)): \(funcname): \(contents)"
+                log = "\(now) \(tracelabel[tracelevel.rawValue])\(filename)(\(lineno)): \(funcname): \(contents)"
         }
         println(log)
 #else
-    println("\(now) \(filename)(\(lineno)): \(funcname): \(contents)")
+    println("\(now) \(tracelabel[tracelevel.rawValue])\(filename)(\(lineno)): \(funcname): \(contents)")
 #endif
     }
 }
