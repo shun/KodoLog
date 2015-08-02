@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		240940001B44359000A94056 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24093FFF1B44359000A94056 /* AppDelegate.swift */; };
-		240940021B44359000A94056 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240940011B44359000A94056 /* ViewController.swift */; };
 		240940051B44359000A94056 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 240940031B44359000A94056 /* Main.storyboard */; };
 		240940071B44359000A94056 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 240940061B44359000A94056 /* Images.xcassets */; };
 		2409400A1B44359000A94056 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 240940081B44359000A94056 /* LaunchScreen.xib */; };
@@ -16,12 +15,14 @@
 		240940211B4435E100A94056 /* SensorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240940201B4435E100A94056 /* SensorManager.swift */; };
 		240940231B4435F400A94056 /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240940221B4435F400A94056 /* LocationController.swift */; };
 		240940251B44360B00A94056 /* MotionActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240940241B44360B00A94056 /* MotionActivityController.swift */; };
+		240A48451B6DE1EA0022CAE3 /* GoogleMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240A48441B6DE1EA0022CAE3 /* GoogleMapsViewController.swift */; };
 		2453C6551B5D29600090810A /* AppMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453C6541B5D29600090810A /* AppMainController.swift */; };
 		2453C6571B5D29B30090810A /* FileUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453C6561B5D29B30090810A /* FileUploader.swift */; };
 		2453C65A1B5D34620090810A /* mainico_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 2453C6591B5D34620090810A /* mainico_256x256.png */; };
 		2453C65C1B5D393D0090810A /* mainico_120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 2453C65B1B5D393D0090810A /* mainico_120x120.png */; };
 		24702E121B5543D400B8D561 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24702E111B5543D400B8D561 /* Utility.swift */; };
 		24B89A031B66747100A9DC98 /* LogTrace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B89A021B66747100A9DC98 /* LogTrace.swift */; };
+		B869256C124372856A7BE8A5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B978D0E7AF2D96881A5A0E /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,10 +36,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09B978D0E7AF2D96881A5A0E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		24093FFA1B44359000A94056 /* KodoLog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KodoLog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		24093FFE1B44359000A94056 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		24093FFF1B44359000A94056 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		240940011B44359000A94056 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		240940041B44359000A94056 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		240940061B44359000A94056 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		240940091B44359000A94056 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -48,12 +49,15 @@
 		240940201B4435E100A94056 /* SensorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SensorManager.swift; path = Sensor/SensorManager.swift; sourceTree = "<group>"; };
 		240940221B4435F400A94056 /* LocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationController.swift; path = Sensor/LocationController.swift; sourceTree = "<group>"; };
 		240940241B44360B00A94056 /* MotionActivityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MotionActivityController.swift; path = Sensor/MotionActivityController.swift; sourceTree = "<group>"; };
+		240A48441B6DE1EA0022CAE3 /* GoogleMapsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapsViewController.swift; sourceTree = "<group>"; };
 		2453C6541B5D29600090810A /* AppMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppMainController.swift; sourceTree = "<group>"; };
 		2453C6561B5D29B30090810A /* FileUploader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUploader.swift; sourceTree = "<group>"; };
 		2453C6591B5D34620090810A /* mainico_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mainico_256x256.png; path = Resources/mainico_256x256.png; sourceTree = "<group>"; };
 		2453C65B1B5D393D0090810A /* mainico_120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mainico_120x120.png; path = Resources/mainico_120x120.png; sourceTree = "<group>"; };
 		24702E111B5543D400B8D561 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		24B89A021B66747100A9DC98 /* LogTrace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTrace.swift; sourceTree = "<group>"; };
+		7364319688E87881CD4C57B1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		CB37A772AAD0AF79B19E3397 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B869256C124372856A7BE8A5 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,12 +79,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E572D0DABC7C874EE1662FF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7364319688E87881CD4C57B1 /* Pods.debug.xcconfig */,
+				CB37A772AAD0AF79B19E3397 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		24093FF11B44359000A94056 = {
 			isa = PBXGroup;
 			children = (
 				24093FFC1B44359000A94056 /* KodoLog */,
 				240940121B44359000A94056 /* KodoLogTests */,
 				24093FFB1B44359000A94056 /* Products */,
+				1E572D0DABC7C874EE1662FF /* Pods */,
+				59865DA8D7B6FF2A1154BAC6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,18 +111,16 @@
 		24093FFC1B44359000A94056 /* KodoLog */ = {
 			isa = PBXGroup;
 			children = (
-				24B89A011B66745C00A9DC98 /* Trace */,
-				2453C6581B5D33EE0090810A /* Resources */,
-				24093FFF1B44359000A94056 /* AppDelegate.swift */,
-				2453C6541B5D29600090810A /* AppMainController.swift */,
-				2453C6561B5D29B30090810A /* FileUploader.swift */,
+				243687B11B6C941A0096DC23 /* App */,
 				240940061B44359000A94056 /* Images.xcassets */,
-				240940081B44359000A94056 /* LaunchScreen.xib */,
-				240940031B44359000A94056 /* Main.storyboard */,
+				2453C6581B5D33EE0090810A /* Resources */,
 				2409401F1B4435B100A94056 /* Sensor */,
 				24093FFD1B44359000A94056 /* Supporting Files */,
-				24702E111B5543D400B8D561 /* Utility.swift */,
-				240940011B44359000A94056 /* ViewController.swift */,
+				24B89A011B66745C00A9DC98 /* Trace */,
+				243687B31B6C94440096DC23 /* UIController */,
+				243687B21B6C94290096DC23 /* UIDesign */,
+				243687B41B6C94550096DC23 /* Utility */,
+				243687B01B6C94020096DC23 /* WebService */,
 			);
 			path = KodoLog;
 			sourceTree = "<group>";
@@ -146,6 +160,48 @@
 			name = Sensor;
 			sourceTree = "<group>";
 		};
+		243687B01B6C94020096DC23 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				2453C6561B5D29B30090810A /* FileUploader.swift */,
+			);
+			name = WebService;
+			sourceTree = "<group>";
+		};
+		243687B11B6C941A0096DC23 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				24093FFF1B44359000A94056 /* AppDelegate.swift */,
+				2453C6541B5D29600090810A /* AppMainController.swift */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		243687B21B6C94290096DC23 /* UIDesign */ = {
+			isa = PBXGroup;
+			children = (
+				240940081B44359000A94056 /* LaunchScreen.xib */,
+				240940031B44359000A94056 /* Main.storyboard */,
+			);
+			name = UIDesign;
+			sourceTree = "<group>";
+		};
+		243687B31B6C94440096DC23 /* UIController */ = {
+			isa = PBXGroup;
+			children = (
+				240A48441B6DE1EA0022CAE3 /* GoogleMapsViewController.swift */,
+			);
+			name = UIController;
+			sourceTree = "<group>";
+		};
+		243687B41B6C94550096DC23 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				24702E111B5543D400B8D561 /* Utility.swift */,
+			);
+			name = Utility;
+			sourceTree = "<group>";
+		};
 		2453C6581B5D33EE0090810A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +219,14 @@
 			name = Trace;
 			sourceTree = "<group>";
 		};
+		59865DA8D7B6FF2A1154BAC6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				09B978D0E7AF2D96881A5A0E /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -170,9 +234,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 240940191B44359000A94056 /* Build configuration list for PBXNativeTarget "KodoLog" */;
 			buildPhases = (
+				609201BD943F6B20D4E6D2D7 /* Check Pods Manifest.lock */,
 				24093FF61B44359000A94056 /* Sources */,
 				24093FF71B44359000A94056 /* Frameworks */,
 				24093FF81B44359000A94056 /* Resources */,
+				0E54D2AC5E6BBCB8772D2854 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -260,6 +326,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0E54D2AC5E6BBCB8772D2854 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		609201BD943F6B20D4E6D2D7 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		24093FF61B44359000A94056 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -271,7 +370,7 @@
 				240940251B44360B00A94056 /* MotionActivityController.swift in Sources */,
 				2453C6551B5D29600090810A /* AppMainController.swift in Sources */,
 				24702E121B5543D400B8D561 /* Utility.swift in Sources */,
-				240940021B44359000A94056 /* ViewController.swift in Sources */,
+				240A48451B6DE1EA0022CAE3 /* GoogleMapsViewController.swift in Sources */,
 				240940211B4435E100A94056 /* SensorManager.swift in Sources */,
 				240940001B44359000A94056 /* AppDelegate.swift in Sources */,
 			);
@@ -398,6 +497,7 @@
 		};
 		2409401A1B44359000A94056 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7364319688E87881CD4C57B1 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -414,6 +514,7 @@
 		};
 		2409401B1B44359000A94056 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB37A772AAD0AF79B19E3397 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
