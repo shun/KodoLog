@@ -18,8 +18,8 @@ enum LOCATION_STS: Int {
 class SensorManager: NSObject {
 // MARK: member
     private static let instance = SensorManager()
-    private var m_locationcontroller: LocationController?
-    private var m_motionactivitycontroller: MotionActivityController?
+    private var m_locationcontroller: LocationController
+    private var m_motionactivitycontroller: MotionActivityController
     private var m_timer: NSTimer?
     private var m_wroteheader: Bool = false
     private var m_docrootpath: String?
@@ -33,6 +33,8 @@ class SensorManager: NSObject {
 
 // MARK: methord
     override init() {
+        m_locationcontroller = LocationController()
+        m_motionactivitycontroller = MotionActivityController()
         super.init()
 
         m_docrootpath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as? String
@@ -40,9 +42,7 @@ class SensorManager: NSObject {
         conditions["gpsaccuracy"] = 10
         conditions["pauselocationservice"] = false
         conditions["distancefilter"] = 10.0 as Double
-        m_locationcontroller = LocationController()
-        m_locationcontroller?.setup(conditions)
-        m_motionactivitycontroller = MotionActivityController()
+        m_locationcontroller.setup(conditions)
         setLocationStatus(.STANDARD)
 
         m_timer = NSTimer.scheduledTimerWithTimeInterval(10, target: self, selector: Selector("timercallback"), userInfo: nil, repeats: true)
@@ -54,12 +54,12 @@ class SensorManager: NSObject {
 
     func setLocationStatus(sts:LOCATION_STS) {
         if (sts == .STANDARD) {
-            m_locationcontroller?.startUpdateLocation()
-            m_locationcontroller?.stopMonitoringSignificantLocation()
+            m_locationcontroller.startUpdateLocation()
+            m_locationcontroller.stopMonitoringSignificantLocation()
         }
         else if (sts == .SIGNIFICANT) {
-            m_locationcontroller?.startMonitoringSignificantLocation()
-            m_locationcontroller?.stopUpdateLocation()
+            m_locationcontroller.startMonitoringSignificantLocation()
+            m_locationcontroller.stopUpdateLocation()
         }
         m_locationsts = sts
     }
@@ -162,7 +162,7 @@ class SensorManager: NSObject {
 
     func isStationary() -> Bool {
         var ret: Bool = false
-        if ((m_motionactivitycontroller?.activitytype == .INVALID) || (m_motionactivitycontroller?.activitytype == .UNKNOWN)) {
+        if ((m_motionactivitycontroller.activitytype == .INVALID) || (m_motionactivitycontroller.activitytype == .UNKNOWN)) {
             // 取得した種別が不明な場合は前回の有効値を使用する
             if (m_lastactivitytype == .STATIONARY) {
                 ret = true
@@ -172,14 +172,14 @@ class SensorManager: NSObject {
                 ret = false
             }
         }
-        else if (m_motionactivitycontroller?.activitytype == .STATIONARY) {
+        else if (m_motionactivitycontroller.activitytype == .STATIONARY) {
             ret = true
         }
         return ret
     }
 
     func didMoveCoordinates() -> Bool {
-        var loc = m_locationcontroller!.getLastLocation()
+        var loc = m_locationcontroller.getLastLocation()
         if (loc == nil) {
             return false
         }
@@ -202,22 +202,22 @@ class SensorManager: NSObject {
             String(format:"%f,", m_lastlocation!.altitude) +
             String(format:"%f,", m_lastlocation!.horizontalAccuracy) +
             String(format:"%f,", m_lastlocation!.verticalAccuracy) +
-            String(format:"%f,", m_locationcontroller!.gpsaccuracy) +
+            String(format:"%f,", m_locationcontroller.gpsaccuracy) +
             String(format:"%f,", m_lastlocation!.course) +
             String(format:"%f,", m_lastlocation!.speed) +
-            String(format:"%f,", m_locationcontroller!.distancefilter) +
-            String(format:"%f,", m_locationcontroller!.headingfilter) +
-            String(format:"%d,", m_locationcontroller!.activitytype.rawValue)
+            String(format:"%f,", m_locationcontroller.distancefilter) +
+            String(format:"%f,", m_locationcontroller.headingfilter) +
+            String(format:"%d,", m_locationcontroller.activitytype.rawValue)
 
         ofs.write(logstr, maxLength:count(logstr))
     }
 
     func writeMotionActivityLog(ofs: NSOutputStream) {
-        var logstr = String(format:"%d,", m_motionactivitycontroller!.steps) +
-            String(format:"%d,", m_motionactivitycontroller!.distance) +
-            String(format:"%d,", m_motionactivitycontroller!.activitytype.rawValue) +
-            String(format:"%d,", m_motionactivitycontroller!.floorsAscended) +
-            String(format:"%d,", m_motionactivitycontroller!.floorsDescended)
+        var logstr = String(format:"%d,", m_motionactivitycontroller.steps) +
+            String(format:"%d,", m_motionactivitycontroller.distance) +
+            String(format:"%d,", m_motionactivitycontroller.activitytype.rawValue) +
+            String(format:"%d,", m_motionactivitycontroller.floorsAscended) +
+            String(format:"%d,", m_motionactivitycontroller.floorsDescended)
 
         ofs.write(logstr, maxLength:count(logstr))
     }
