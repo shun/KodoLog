@@ -20,7 +20,12 @@
 		2453C6571B5D29B30090810A /* FileUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453C6561B5D29B30090810A /* FileUploader.swift */; };
 		2453C65A1B5D34620090810A /* mainico_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 2453C6591B5D34620090810A /* mainico_256x256.png */; };
 		2453C65C1B5D393D0090810A /* mainico_120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 2453C65B1B5D393D0090810A /* mainico_120x120.png */; };
+		24549EFF1B820B17004753F4 /* SensorLogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24549EFE1B820B17004753F4 /* SensorLogManager.swift */; };
 		24702E121B5543D400B8D561 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24702E111B5543D400B8D561 /* Utility.swift */; };
+		2476E2811B6E5D4000A98CB9 /* gps_circle_48dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 2476E27E1B6E5D4000A98CB9 /* gps_circle_48dp.png */; };
+		2476E2821B6E5D4000A98CB9 /* location_48dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 2476E27F1B6E5D4000A98CB9 /* location_48dp.png */; };
+		2476E2831B6E5D4000A98CB9 /* route_48dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 2476E2801B6E5D4000A98CB9 /* route_48dp.png */; };
+		2476E2861B6E5E8400A98CB9 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2476E2851B6E5E8400A98CB9 /* CustomButton.swift */; };
 		24B89A031B66747100A9DC98 /* LogTrace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B89A021B66747100A9DC98 /* LogTrace.swift */; };
 		B869256C124372856A7BE8A5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B978D0E7AF2D96881A5A0E /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -54,7 +59,12 @@
 		2453C6561B5D29B30090810A /* FileUploader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUploader.swift; sourceTree = "<group>"; };
 		2453C6591B5D34620090810A /* mainico_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mainico_256x256.png; path = Resources/mainico_256x256.png; sourceTree = "<group>"; };
 		2453C65B1B5D393D0090810A /* mainico_120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mainico_120x120.png; path = Resources/mainico_120x120.png; sourceTree = "<group>"; };
+		24549EFE1B820B17004753F4 /* SensorLogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorLogManager.swift; sourceTree = "<group>"; };
 		24702E111B5543D400B8D561 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		2476E27E1B6E5D4000A98CB9 /* gps_circle_48dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gps_circle_48dp.png; path = Resources/gps_circle_48dp.png; sourceTree = "<group>"; };
+		2476E27F1B6E5D4000A98CB9 /* location_48dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = location_48dp.png; path = Resources/location_48dp.png; sourceTree = "<group>"; };
+		2476E2801B6E5D4000A98CB9 /* route_48dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = route_48dp.png; path = Resources/route_48dp.png; sourceTree = "<group>"; };
+		2476E2851B6E5E8400A98CB9 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		24B89A021B66747100A9DC98 /* LogTrace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTrace.swift; sourceTree = "<group>"; };
 		7364319688E87881CD4C57B1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CB37A772AAD0AF79B19E3397 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,6 +127,7 @@
 				2409401F1B4435B100A94056 /* Sensor */,
 				24093FFD1B44359000A94056 /* Supporting Files */,
 				24B89A011B66745C00A9DC98 /* Trace */,
+				2476E2841B6E5E6100A98CB9 /* UI-Custom */,
 				243687B31B6C94440096DC23 /* UIController */,
 				243687B21B6C94290096DC23 /* UIDesign */,
 				243687B41B6C94550096DC23 /* Utility */,
@@ -156,6 +167,7 @@
 				240940201B4435E100A94056 /* SensorManager.swift */,
 				240940221B4435F400A94056 /* LocationController.swift */,
 				240940241B44360B00A94056 /* MotionActivityController.swift */,
+				24549EFE1B820B17004753F4 /* SensorLogManager.swift */,
 			);
 			name = Sensor;
 			sourceTree = "<group>";
@@ -205,10 +217,21 @@
 		2453C6581B5D33EE0090810A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2476E27E1B6E5D4000A98CB9 /* gps_circle_48dp.png */,
+				2476E27F1B6E5D4000A98CB9 /* location_48dp.png */,
+				2476E2801B6E5D4000A98CB9 /* route_48dp.png */,
 				2453C65B1B5D393D0090810A /* mainico_120x120.png */,
 				2453C6591B5D34620090810A /* mainico_256x256.png */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		2476E2841B6E5E6100A98CB9 /* UI-Custom */ = {
+			isa = PBXGroup;
+			children = (
+				2476E2851B6E5E8400A98CB9 /* CustomButton.swift */,
+			);
+			name = "UI-Custom";
 			sourceTree = "<group>";
 		};
 		24B89A011B66745C00A9DC98 /* Trace */ = {
@@ -278,6 +301,7 @@
 				TargetAttributes = {
 					24093FF91B44359000A94056 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 993XGLVYRR;
 					};
 					2409400E1B44359000A94056 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -313,7 +337,10 @@
 				2409400A1B44359000A94056 /* LaunchScreen.xib in Resources */,
 				2453C65A1B5D34620090810A /* mainico_256x256.png in Resources */,
 				240940071B44359000A94056 /* Images.xcassets in Resources */,
+				2476E2821B6E5D4000A98CB9 /* location_48dp.png in Resources */,
+				2476E2811B6E5D4000A98CB9 /* gps_circle_48dp.png in Resources */,
 				2453C65C1B5D393D0090810A /* mainico_120x120.png in Resources */,
+				2476E2831B6E5D4000A98CB9 /* route_48dp.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,9 +395,11 @@
 				24B89A031B66747100A9DC98 /* LogTrace.swift in Sources */,
 				2453C6571B5D29B30090810A /* FileUploader.swift in Sources */,
 				240940251B44360B00A94056 /* MotionActivityController.swift in Sources */,
+				2476E2861B6E5E8400A98CB9 /* CustomButton.swift in Sources */,
 				2453C6551B5D29600090810A /* AppMainController.swift in Sources */,
 				24702E121B5543D400B8D561 /* Utility.swift in Sources */,
 				240A48451B6DE1EA0022CAE3 /* GoogleMapsViewController.swift in Sources */,
+				24549EFF1B820B17004753F4 /* SensorLogManager.swift in Sources */,
 				240940211B4435E100A94056 /* SensorManager.swift in Sources */,
 				240940001B44359000A94056 /* AppDelegate.swift in Sources */,
 			);
@@ -501,11 +530,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = KodoLog/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "";
 				"OTHER_SWIFT_FLAGS[arch=*]" = "-DENABLE_XCODECOLORS -DDEBUG";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SWIFT_MODULE_NAME)-Swift.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";
@@ -519,10 +551,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = KodoLog/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				"OTHER_SWIFT_FLAGS[arch=*]" = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SWIFT_MODULE_NAME)-Swift.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "";

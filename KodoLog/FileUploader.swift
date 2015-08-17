@@ -8,6 +8,12 @@
 
 import UIKit
 
+enum UPLOAD_DEST: Int {
+    case DROPBOX
+}
+
 class FileUploader: NSObject {
-   
+    class func getUploader(dest: UPLOAD_DEST) -> FileUploader? {
+        return nil;
+    }
 }

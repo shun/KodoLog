@@ -18,8 +18,6 @@ enum TRACE_LVL: Int {
 }
 
 class LogTrace: NSObject {
-
-
     private var m_tracelevel: TRACE_LVL
     var tracelevel: TRACE_LVL {
         get {return self.m_tracelevel}
@@ -32,13 +30,20 @@ class LogTrace: NSObject {
         return Static.instance
     }
 
+    private var m_docrootpath:String
+
     override init() {
 #if DEBUG
     self.m_tracelevel = .VERB
 #else
     self.m_tracelevel = .WARN
 #endif
+        m_docrootpath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
         super.init()
+    }
+
+    func verb(filepath: String = __FILE__, funcname:String = __FUNCTION__, lineno:Int = __LINE__) {
+        self.verb(filepath: filepath, funcname: funcname, lineno: lineno, format: "")
     }
 
     func verb(filepath: String = __FILE__, funcname:String = __FUNCTION__, lineno:Int = __LINE__, format:String, arguments:CVarArgType...) {
@@ -48,11 +53,19 @@ class LogTrace: NSObject {
         self.trace(.VERB, filepath: filepath, funcname: funcname, lineno: lineno, contents: str)
     }
 
+    func info(filepath: String = __FILE__, funcname:String = __FUNCTION__, lineno:Int = __LINE__) {
+        self.info(filepath: filepath, funcname: funcname, lineno: lineno, format: "")
+    }
+
     func info(filepath: String = __FILE__, funcname:String = __FUNCTION__, lineno:Int = __LINE__, format:String, arguments:CVarArgType...) {
         let values = getVaList(arguments)
         let str = NSString(format: format, arguments: values) as String
 
         self.trace(.INFO, filepath: filepath, funcname: funcname, lineno: lineno, contents: str)
+    }
+
+    func debug(filepath: String = __FILE__, funcname:String = __FUNCTION__, lineno:Int = __LINE__) {
+        self.debug(filepath: filepath, funcname: funcname, lineno: lineno, format: "")
     }
 
     func debug(filepath: String = __FILE__, funcname:String = __FUNCTION__, lineno:Int = __LINE__, format:String, arguments:CVarArgType...) {
@@ -62,11 +75,19 @@ class LogTrace: NSObject {
         self.trace(.DEBUG, filepath: filepath, funcname: funcname, lineno: lineno, contents: str)
     }
 
+    func warn(filepath: String = __FILE__, funcname:String = __FUNCTION__, lineno:Int = __LINE__) {
+        self.warn(filepath: filepath, funcname: funcname, lineno: lineno, format: "")
+    }
+
     func warn(filepath: String = __FILE__, funcname:String = __FUNCTION__, lineno:Int = __LINE__, format:String, arguments:CVarArgType...) {
         let values = getVaList(arguments)
         let str = NSString(format: format, arguments: values) as String
 
         self.trace(.WARN, filepath: filepath, funcname: funcname, lineno: lineno, contents: str)
+    }
+
+    func error(filepath: String = __FILE__, funcname:String = __FUNCTION__, lineno:Int = __LINE__) {
+        self.error(filepath: filepath, funcname: funcname, lineno: lineno, format: "")
     }
 
     func error(filepath: String = __FILE__, funcname:String = __FUNCTION__, lineno:Int = __LINE__, format:String, arguments:CVarArgType...) {
@@ -80,7 +101,9 @@ class LogTrace: NSObject {
         if (tracelevel.rawValue  < self.tracelevel.rawValue) {
             return
         }
-        let now = Utility.getDateTimeString(NSDate(), format: "yyyy-MM-dd hh:mm:ss.SSSS")
+
+        var log:String = ""
+        let now = Utility.getDateTimeString(NSDate(), format: "yyyy-MM-dd HH:mm:ss.SSSS")
         let filename = filepath.lastPathComponent
         let tracelabel = [  "[VERB]  ",
                             "[INFO]  ",
@@ -88,6 +111,15 @@ class LogTrace: NSObject {
                             "[WARN]  ",
                             "[ERROR] "
         ]
+
+#if false //ENABLE_LOG_ON_FILE
+        var ofs:NSOutputStream
+        ofs = NSOutputStream(toFileAtPath: m_docrootpath + "/log.txt", append: true)!
+        ofs.open()
+        log = "\(now) \(tracelabel[tracelevel.rawValue])\(filename)(\(lineno)): \(funcname): \(contents)\n"
+        ofs.write(log, maxLength: count(log))
+        ofs.close()
+#else   // ENABLE_LOG_ON_FILE
 #if ENABLE_XCODECOLORS
         let ESCAPE = "\u{001b}["
 
@@ -95,7 +127,6 @@ class LogTrace: NSObject {
         let RESET_BG = ESCAPE + "bg;" // Clear any background color
         let RESET = ESCAPE + ";"   // Clear any foreground or background color
 
-        var log:String = ""
 
         let tracecolors = [ "fg0,0,0;",             // VERB
                             "fg0,0,0;",             // INFO
@@ -116,9 +147,11 @@ class LogTrace: NSObject {
             default:
                 log = "\(now) \(tracelabel[tracelevel.rawValue])\(filename)(\(lineno)): \(funcname): \(contents)"
         }
+
         println(log)
 #else
     println("\(now) \(tracelabel[tracelevel.rawValue])\(filename)(\(lineno)): \(funcname): \(contents)")
-#endif
+#endif  // ENABLE_XCODECOLORS
+#endif  // ENABLE_LOG_ON_FILE
     }
 }

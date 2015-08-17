@@ -10,13 +10,17 @@ import UIKit
 import CoreMotion
 
 enum ACTIVITYTYPE:Int {
-    case INVALID
-    case STATIONARY
-    case WALKING
-    case RUNNING
-    case AUTOMOTIVE
-    case CYCLING
-    case UNKNOWN
+    case UNKNOWN = 0x0000000
+    case STATIONARY = 0x00000001
+    case WALKING = 0x00000002
+    case RUNNING = 0x00000004
+    case AUTOMOTIVE = 0x0000008
+    case CYCLING = 0x00000010
+    case INVALID = 0x10000000
+}
+
+protocol MotionActivityControllerDelegate {
+    func updateActivity()
 }
 
 class MotionActivityController: NSObject {

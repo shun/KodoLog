@@ -11,24 +11,53 @@ import GoogleMaps;
 
 class GoogleMapsViewController: UIViewController {
 
+    @IBOutlet weak var btnLocation: CustomButton!
+    @IBOutlet weak var btnGPSCircle: CustomButton!
+    @IBOutlet weak var btnLink: CustomButton!
+
     override func viewDidLoad() {
-        LogTrace.sharedInstance.info(format: "");
+        LogTrace.sharedInstance.info();
         super.viewDidLoad()
+
         // Do any additional setup after loading the view, typically from a nib.
         var camera = GMSCameraPosition.cameraWithLatitude(43.027944, longitude: 141.461893, zoom: 6)
-        var mapView = GMSMapView.mapWithFrame(CGRectZero, camera: camera)
+        var mapView = GMSMapView.mapWithFrame(self.view.bounds, camera: camera)
+        mapView.settings.myLocationButton = true
         mapView.myLocationEnabled = true
-        self.view = mapView
-
-        var marker = GMSMarker()
-        marker.position = CLLocationCoordinate2DMake(43.027944, 141.461893)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
-        marker.map = mapView    }
+        self.view.insertSubview(mapView, atIndex: 0)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-        LogTrace.sharedInstance.info(format: "");
+        LogTrace.sharedInstance.info();
+    }
+
+    @IBAction func touchDownLocation(sender: AnyObject) {
+        btnLocation.toggle()
+    }
+
+    @IBAction func touchDownGPSCircle(sender: AnyObject) {
+        btnGPSCircle.toggle()
+    }
+
+    @IBAction func touchDownLink(sender: AnyObject) {
+        btnLink.toggle()
+    }
+
+    func drawoverlays() {
+
+    }
+
+    func drawlink() {
+
+    }
+
+    func drawGPSCircles() {
+
+    }
+
+    func drawLocationMarker() {
+
     }
 }
