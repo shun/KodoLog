@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 KudoShunsuke. All rights reserved.
 //
 
-import Cocoa
+import UIKit
 
 class SensorLogManager: NSObject {
 
