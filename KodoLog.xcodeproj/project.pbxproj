@@ -26,6 +26,8 @@
 		2476E2821B6E5D4000A98CB9 /* location_48dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 2476E27F1B6E5D4000A98CB9 /* location_48dp.png */; };
 		2476E2831B6E5D4000A98CB9 /* route_48dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 2476E2801B6E5D4000A98CB9 /* route_48dp.png */; };
 		2476E2861B6E5E8400A98CB9 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2476E2851B6E5E8400A98CB9 /* CustomButton.swift */; };
+		249920001B8622A8006E6569 /* LogStore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24991FFF1B8622A8006E6569 /* LogStore.cpp */; };
+		249920021B862354006E6569 /* CPPWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 249920011B862354006E6569 /* CPPWrapper.mm */; };
 		24B89A031B66747100A9DC98 /* LogTrace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B89A021B66747100A9DC98 /* LogTrace.swift */; };
 		B869256C124372856A7BE8A5 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09B978D0E7AF2D96881A5A0E /* libPods.a */; };
 /* End PBXBuildFile section */
@@ -65,6 +67,12 @@
 		2476E27F1B6E5D4000A98CB9 /* location_48dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = location_48dp.png; path = Resources/location_48dp.png; sourceTree = "<group>"; };
 		2476E2801B6E5D4000A98CB9 /* route_48dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = route_48dp.png; path = Resources/route_48dp.png; sourceTree = "<group>"; };
 		2476E2851B6E5E8400A98CB9 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		24991FFD1B86217A006E6569 /* LogStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogStore.h; sourceTree = "<group>"; };
+		24991FFF1B8622A8006E6569 /* LogStore.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LogStore.cpp; sourceTree = "<group>"; };
+		249920011B862354006E6569 /* CPPWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CPPWrapper.mm; sourceTree = "<group>"; };
+		249920031B862375006E6569 /* CPPWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CPPWrapper.h; sourceTree = "<group>"; };
+		249920051B86275C006E6569 /* KodoLog-Swift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KodoLog-Swift.h"; sourceTree = "<group>"; };
+		249920081B862ABF006E6569 /* Utility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utility.h; sourceTree = "<group>"; };
 		24B89A021B66747100A9DC98 /* LogTrace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogTrace.swift; sourceTree = "<group>"; };
 		7364319688E87881CD4C57B1 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		CB37A772AAD0AF79B19E3397 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -101,6 +109,7 @@
 		24093FF11B44359000A94056 = {
 			isa = PBXGroup;
 			children = (
+				249920051B86275C006E6569 /* KodoLog-Swift.h */,
 				24093FFC1B44359000A94056 /* KodoLog */,
 				240940121B44359000A94056 /* KodoLogTests */,
 				24093FFB1B44359000A94056 /* Products */,
@@ -121,6 +130,8 @@
 		24093FFC1B44359000A94056 /* KodoLog */ = {
 			isa = PBXGroup;
 			children = (
+				24991FFE1B862253006E6569 /* objcpp */,
+				24991FFC1B8620D1006E6569 /* cpp */,
 				243687B11B6C941A0096DC23 /* App */,
 				240940061B44359000A94056 /* Images.xcassets */,
 				2453C6581B5D33EE0090810A /* Resources */,
@@ -232,6 +243,41 @@
 				2476E2851B6E5E8400A98CB9 /* CustomButton.swift */,
 			);
 			name = "UI-Custom";
+			sourceTree = "<group>";
+		};
+		24991FFC1B8620D1006E6569 /* cpp */ = {
+			isa = PBXGroup;
+			children = (
+				249920071B862AA7006E6569 /* Utility */,
+				249920061B862A9E006E6569 /* LogStore */,
+			);
+			name = cpp;
+			sourceTree = "<group>";
+		};
+		24991FFE1B862253006E6569 /* objcpp */ = {
+			isa = PBXGroup;
+			children = (
+				249920011B862354006E6569 /* CPPWrapper.mm */,
+				249920031B862375006E6569 /* CPPWrapper.h */,
+			);
+			name = objcpp;
+			sourceTree = "<group>";
+		};
+		249920061B862A9E006E6569 /* LogStore */ = {
+			isa = PBXGroup;
+			children = (
+				24991FFD1B86217A006E6569 /* LogStore.h */,
+				24991FFF1B8622A8006E6569 /* LogStore.cpp */,
+			);
+			name = LogStore;
+			sourceTree = "<group>";
+		};
+		249920071B862AA7006E6569 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				249920081B862ABF006E6569 /* Utility.h */,
+			);
+			name = Utility;
 			sourceTree = "<group>";
 		};
 		24B89A011B66745C00A9DC98 /* Trace */ = {
@@ -391,6 +437,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				249920001B8622A8006E6569 /* LogStore.cpp in Sources */,
 				240940231B4435F400A94056 /* LocationController.swift in Sources */,
 				24B89A031B66747100A9DC98 /* LogTrace.swift in Sources */,
 				2453C6571B5D29B30090810A /* FileUploader.swift in Sources */,
@@ -402,6 +449,7 @@
 				24549EFF1B820B17004753F4 /* SensorLogManager.swift in Sources */,
 				240940211B4435E100A94056 /* SensorManager.swift in Sources */,
 				240940001B44359000A94056 /* AppDelegate.swift in Sources */,
+				249920021B862354006E6569 /* CPPWrapper.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

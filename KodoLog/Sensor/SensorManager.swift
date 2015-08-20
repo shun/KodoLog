@@ -177,6 +177,7 @@ class SensorManager: NSObject,  LocationControllerDelegate,  MotionActivityContr
         }
 
         if ((count(m_currentlogdate) != 0) && (curdate != m_currentlogdate)) {
+            m_wroteheader = false
             // ファイルの日付が更新されたので、前のファイルをアップロードする
             m_currentlogdate = curdate
         }
