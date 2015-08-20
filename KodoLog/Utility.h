@@ -13,7 +13,7 @@
 #include <string>
 #include <sstream>
 
-unsigned long split(const std::string line, char delimiter, std::vector<std::string>&elements) {
+unsigned long split(const std::string& line, char delimiter, std::vector<std::string>&elements) {
 
     std::istringstream stream(line);
     std::string field;
