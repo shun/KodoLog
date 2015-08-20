@@ -20,12 +20,12 @@
 		2453C6571B5D29B30090810A /* FileUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453C6561B5D29B30090810A /* FileUploader.swift */; };
 		2453C65A1B5D34620090810A /* mainico_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 2453C6591B5D34620090810A /* mainico_256x256.png */; };
 		2453C65C1B5D393D0090810A /* mainico_120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 2453C65B1B5D393D0090810A /* mainico_120x120.png */; };
-		24549EFF1B820B17004753F4 /* SensorLogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24549EFE1B820B17004753F4 /* SensorLogManager.swift */; };
 		24702E121B5543D400B8D561 /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24702E111B5543D400B8D561 /* Utility.swift */; };
 		2476E2811B6E5D4000A98CB9 /* gps_circle_48dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 2476E27E1B6E5D4000A98CB9 /* gps_circle_48dp.png */; };
 		2476E2821B6E5D4000A98CB9 /* location_48dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 2476E27F1B6E5D4000A98CB9 /* location_48dp.png */; };
 		2476E2831B6E5D4000A98CB9 /* route_48dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 2476E2801B6E5D4000A98CB9 /* route_48dp.png */; };
 		2476E2861B6E5E8400A98CB9 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2476E2851B6E5E8400A98CB9 /* CustomButton.swift */; };
+		24900E131B86379C001E85A7 /* SensorLogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24900E121B86379C001E85A7 /* SensorLogManager.swift */; };
 		249920001B8622A8006E6569 /* LogStore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24991FFF1B8622A8006E6569 /* LogStore.cpp */; };
 		249920021B862354006E6569 /* CPPWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 249920011B862354006E6569 /* CPPWrapper.mm */; };
 		24B89A031B66747100A9DC98 /* LogTrace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B89A021B66747100A9DC98 /* LogTrace.swift */; };
@@ -61,12 +61,12 @@
 		2453C6561B5D29B30090810A /* FileUploader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUploader.swift; sourceTree = "<group>"; };
 		2453C6591B5D34620090810A /* mainico_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mainico_256x256.png; path = Resources/mainico_256x256.png; sourceTree = "<group>"; };
 		2453C65B1B5D393D0090810A /* mainico_120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mainico_120x120.png; path = Resources/mainico_120x120.png; sourceTree = "<group>"; };
-		24549EFE1B820B17004753F4 /* SensorLogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorLogManager.swift; sourceTree = "<group>"; };
 		24702E111B5543D400B8D561 /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		2476E27E1B6E5D4000A98CB9 /* gps_circle_48dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gps_circle_48dp.png; path = Resources/gps_circle_48dp.png; sourceTree = "<group>"; };
 		2476E27F1B6E5D4000A98CB9 /* location_48dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = location_48dp.png; path = Resources/location_48dp.png; sourceTree = "<group>"; };
 		2476E2801B6E5D4000A98CB9 /* route_48dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = route_48dp.png; path = Resources/route_48dp.png; sourceTree = "<group>"; };
 		2476E2851B6E5E8400A98CB9 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		24900E121B86379C001E85A7 /* SensorLogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorLogManager.swift; sourceTree = "<group>"; };
 		24991FFD1B86217A006E6569 /* LogStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogStore.h; sourceTree = "<group>"; };
 		24991FFF1B8622A8006E6569 /* LogStore.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LogStore.cpp; sourceTree = "<group>"; };
 		249920011B862354006E6569 /* CPPWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CPPWrapper.mm; sourceTree = "<group>"; };
@@ -175,10 +175,10 @@
 		2409401F1B4435B100A94056 /* Sensor */ = {
 			isa = PBXGroup;
 			children = (
+				24900E121B86379C001E85A7 /* SensorLogManager.swift */,
 				240940201B4435E100A94056 /* SensorManager.swift */,
 				240940221B4435F400A94056 /* LocationController.swift */,
 				240940241B44360B00A94056 /* MotionActivityController.swift */,
-				24549EFE1B820B17004753F4 /* SensorLogManager.swift */,
 			);
 			name = Sensor;
 			sourceTree = "<group>";
@@ -440,13 +440,13 @@
 				249920001B8622A8006E6569 /* LogStore.cpp in Sources */,
 				240940231B4435F400A94056 /* LocationController.swift in Sources */,
 				24B89A031B66747100A9DC98 /* LogTrace.swift in Sources */,
+				24900E131B86379C001E85A7 /* SensorLogManager.swift in Sources */,
 				2453C6571B5D29B30090810A /* FileUploader.swift in Sources */,
 				240940251B44360B00A94056 /* MotionActivityController.swift in Sources */,
 				2476E2861B6E5E8400A98CB9 /* CustomButton.swift in Sources */,
 				2453C6551B5D29600090810A /* AppMainController.swift in Sources */,
 				24702E121B5543D400B8D561 /* Utility.swift in Sources */,
 				240A48451B6DE1EA0022CAE3 /* GoogleMapsViewController.swift in Sources */,
-				24549EFF1B820B17004753F4 /* SensorLogManager.swift in Sources */,
 				240940211B4435E100A94056 /* SensorManager.swift in Sources */,
 				240940001B44359000A94056 /* AppDelegate.swift in Sources */,
 				249920021B862354006E6569 /* CPPWrapper.mm in Sources */,
