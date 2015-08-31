@@ -12,14 +12,27 @@
 #include <stdint.h>
 #include <vector>
 
+enum {
+    E_STOREITEMS_LAT = 0,
+    E_STOREITEMS_LNG,
+};
+
+struct S_STOREITEMS {
+    double latitude;
+    double longitude;
+};
+
 class LogStore {
 public :
     LogStore();
     ~LogStore();
     bool load(const char *path);
-    const char*at(const unsigned int idx);
+    const S_STOREITEMS at(const unsigned int idx);
+    unsigned long count() { return m_logs.size(); }
+    void clear() { m_logs.clear(); }
+    
 
 private :
-    std::vector<std::string>m_logs;
+    std::vector<S_STOREITEMS>m_logs;
 };
 #endif

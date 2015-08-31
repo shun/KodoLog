@@ -12,7 +12,8 @@
 
 @interface CPPWrapper : NSObject
 -(BOOL)load:(NSString*)path;
--(NSString*)getLine:(int)index;
+-(NSArray*)getCoords;
+-(void)clear;
 
 @end
 

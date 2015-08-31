@@ -14,6 +14,9 @@ class GoogleMapsViewController: UIViewController {
     @IBOutlet weak var btnLocation: CustomButton!
     @IBOutlet weak var btnGPSCircle: CustomButton!
     @IBOutlet weak var btnLink: CustomButton!
+    private var m_mapview:GMSMapView?
+    private var m_filepath:String = ""
+    private let m_cppwrapper:CPPWrapper = CPPWrapper()
 
     override func viewDidLoad() {
         LogTrace.sharedInstance.info();
@@ -26,6 +29,7 @@ class GoogleMapsViewController: UIViewController {
         LogTrace.sharedInstance.info();
         let mapView = createMapView()
         self.view.insertSubview(mapView, atIndex: 0)
+        m_mapview = mapView
     }
 
     override func viewDidDisappear(animated: Bool) {
@@ -39,8 +43,8 @@ class GoogleMapsViewController: UIViewController {
         LogTrace.sharedInstance.info();
     }
 
-    func createMapView() -> GMSMapView{
-        var camera = GMSCameraPosition.cameraWithLatitude(43.027944, longitude: 141.461893, zoom: 6)
+    func createMapView() -> GMSMapView {
+        var camera = GMSCameraPosition.cameraWithLatitude(43.027944, longitude: 141.461893, zoom: 16)
         var mapView = GMSMapView.mapWithFrame(self.view.bounds, camera: camera)
         mapView.settings.myLocationButton = true
         mapView.myLocationEnabled = true
@@ -65,20 +69,41 @@ class GoogleMapsViewController: UIViewController {
 
 
     func drawoverlays() {
-        let wrapper = CPPWrapper()
+        m_mapview?.clear()
         let logpaths = SensorLogManager.sharedInstance.getLoglist()
         let lastlogpath = logpaths[logpaths.count-1]
 
-        LogTrace.sharedInstance.debug(format: "start")
-        wrapper.load(lastlogpath)
-        LogTrace.sharedInstance.debug(format: "end")
-        wrapper.getLine(0)
-//        SensorLogManager.sharedInstance.loadLogData(lastlogpath)
+        if ((m_filepath == "") || (m_filepath != lastlogpath) ){
+            m_filepath = lastlogpath
+            LogTrace.sharedInstance.debug(format: "start")
+            m_cppwrapper.load(lastlogpath)
+            LogTrace.sharedInstance.debug(format: "end")
+        }
 
+        let coords:[AnyObject] = m_cppwrapper.getCoords()
+        if (btnLocation.togglests) {
+        }
+
+        if (btnGPSCircle.togglests) {
+        }
+
+        if (btnLink.togglests) {
+            self.drawlink(coords)
+        }
     }
 
-    func drawlink() {
+    func drawlink(coords:[AnyObject]) {
+        var paths: GMSMutablePath = GMSMutablePath()
 
+        var idx: Int = 0
+        for (idx = 0; idx < coords.count; idx++) {
+            let coord = coords[idx] as! [String:Double]
+            let para = CLLocationCoordinate2DMake(coord["latitude"]!, coord["longitude"]!)
+            paths.addCoordinate(para)
+        }
+
+        let polyline = GMSPolyline(path: paths)
+        polyline.map = m_mapview
     }
 
     func drawGPSCircles() {

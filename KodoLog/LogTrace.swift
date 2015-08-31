@@ -112,7 +112,7 @@ class LogTrace: NSObject {
                             "[ERROR] "
         ]
 
-#if false //ENABLE_LOG_ON_FILE
+#if true //ENABLE_LOG_ON_FILE
         var ofs:NSOutputStream
         ofs = NSOutputStream(toFileAtPath: m_docrootpath + "/log.txt", append: true)!
         ofs.open()

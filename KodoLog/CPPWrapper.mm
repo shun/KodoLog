@@ -27,8 +27,22 @@
     return m_logstore->load([path UTF8String]);
 }
 
--(NSString*)getLine:(int)index {
-    return [NSString stringWithCString:m_logstore->at(index) encoding:NSUTF8StringEncoding];
+-(void)clear {
+    m_logstore->clear();
 }
 
+-(NSArray *)getCoords {
+    NSMutableArray * array = [NSMutableArray array];
+
+    unsigned long size = m_logstore->count();
+
+    for (int i = 0; i < size; i++) {
+        S_STOREITEMS items = m_logstore->at(i);
+        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys: @(items.latitude), @"latitude",
+                                                                        @(items.longitude), @"longitude",
+                                                                        nil];
+        [array addObject: dic];
+    }
+    return array;
+}
 @end

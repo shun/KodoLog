@@ -33,8 +33,12 @@ bool LogStore::load(const char*path) {
         return false;
     }
 
+    m_logs.clear();
+
     std::vector<std::string>items;
     int64_t lineno = 0;
+    S_STOREITEMS storeitems;
+
     while (getline(ifs, line)) {
         lineno++;
         items.clear();
@@ -63,7 +67,9 @@ bool LogStore::load(const char*path) {
             }
             lastlat = items.at(latidx);
             lastlng = items.at(lngidx);
-            m_logs.push_back(line);
+            storeitems.latitude = atof(lastlat.c_str());
+            storeitems.longitude = atof(lastlng.c_str());
+            m_logs.push_back(storeitems);
         }
     }
 
@@ -71,6 +77,10 @@ bool LogStore::load(const char*path) {
     return true;
 }
 
-const char* LogStore::at(const unsigned int idx) {
-    return nullptr;
+const S_STOREITEMS LogStore::at(const unsigned int idx) {
+    if (m_logs.size() < idx) {
+        throw "Exception : beyond the index";
+    }
+
+    return m_logs.at(idx);
 }
