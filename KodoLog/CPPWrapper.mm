@@ -31,7 +31,7 @@
     m_logstore->clear();
 }
 
--(NSArray *)getCoords {
+-(NSArray *)getItems {
     NSMutableArray * array = [NSMutableArray array];
 
     unsigned long size = m_logstore->count();
@@ -40,6 +40,8 @@
         S_STOREITEMS items = m_logstore->at(i);
         NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys: @(items.latitude), @"latitude",
                                                                         @(items.longitude), @"longitude",
+                                                                        @(items.haccuracy), @"haccuracy",
+                                                                        @(items.vaccuracy), @"vaccuracy",
                                                                         nil];
         [array addObject: dic];
     }

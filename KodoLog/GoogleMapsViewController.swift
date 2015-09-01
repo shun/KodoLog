@@ -80,25 +80,26 @@ class GoogleMapsViewController: UIViewController {
             LogTrace.sharedInstance.debug(format: "end")
         }
 
-        let coords:[AnyObject] = m_cppwrapper.getCoords()
+        let items:[AnyObject] = m_cppwrapper.getItems()
         if (btnLocation.togglests) {
         }
 
         if (btnGPSCircle.togglests) {
+            self.drawGPSCircles(items)
         }
 
         if (btnLink.togglests) {
-            self.drawlink(coords)
+            self.drawlink(items)
         }
     }
 
-    func drawlink(coords:[AnyObject]) {
+    func drawlink(items:[AnyObject]) {
         var paths: GMSMutablePath = GMSMutablePath()
 
         var idx: Int = 0
-        for (idx = 0; idx < coords.count; idx++) {
-            let coord = coords[idx] as! [String:Double]
-            let para = CLLocationCoordinate2DMake(coord["latitude"]!, coord["longitude"]!)
+        for (idx = 0; idx < items.count; idx++) {
+            let item = items[idx] as! [String:Double]
+            let para = CLLocationCoordinate2DMake(item["latitude"]!, item["longitude"]!)
             paths.addCoordinate(para)
         }
 
@@ -106,7 +107,15 @@ class GoogleMapsViewController: UIViewController {
         polyline.map = m_mapview
     }
 
-    func drawGPSCircles() {
+    func drawGPSCircles(items:[AnyObject]) {
+        var idx: Int = 0
+        for (idx = 0; idx < items.count; idx++) {
+            let item = items[idx] as! [String:Double]
+            let center = CLLocationCoordinate2DMake(item["latitude"]!, item["longitude"]!)
+            var circle = GMSCircle(position: center, radius: item["haccuracy"]!)
+            circle.strokeColor = UIColor.redColor()
+            circle.map = m_mapview;
+        }
 
     }
 

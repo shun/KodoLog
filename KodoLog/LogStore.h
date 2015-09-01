@@ -20,6 +20,8 @@ enum {
 struct S_STOREITEMS {
     double latitude;
     double longitude;
+    double haccuracy;
+    double vaccuracy;
 };
 
 class LogStore {

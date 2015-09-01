@@ -12,7 +12,7 @@
 
 @interface CPPWrapper : NSObject
 -(BOOL)load:(NSString*)path;
--(NSArray*)getCoords;
+-(NSArray*)getItems;
 -(void)clear;
 
 @end
