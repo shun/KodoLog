@@ -22,6 +22,19 @@ class SensorLogManager: NSObject {
         return Static.instance
     }
 
+    func getDateList() ->[String] {
+        var datelist: [String] = []
+        let docpath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as? String
+        let filemanager = NSFileManager.defaultManager()
+
+        let direnums = filemanager.enumeratorAtPath(docpath! + "/logs")
+
+        while let element = direnums?.nextObject() as? String {
+            datelist.append(element.componentsSeparatedByString(".")[0])
+        }
+        return datelist
+    }
+
     func getLoglist() -> [String] {
         var loglist: [String] = []
 
