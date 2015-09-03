@@ -26,6 +26,10 @@ struct LastLocationInfo {
     var location: CLLocation
 }
 
+protocol SensorManagerDelegate {
+    func updateLocation(coordinate: CLLocationCoordinate2D)
+}
+
 class SensorManager: NSObject,  LocationControllerDelegate,  MotionActivityControllerDelegate {
 // MARK: member
     private var m_locationcontroller: LocationController
@@ -42,6 +46,7 @@ class SensorManager: NSObject,  LocationControllerDelegate,  MotionActivityContr
     private var m_lastlocation: LastLocationInfo
     private var m_laststeps: Int = 0
     private var m_activitysts:ACTIVITY_STS = .UNKNOWN
+    private var m_delegateList: [SensorManagerDelegate]
 
     class var sharedInstance:SensorManager {
         struct Static {
@@ -50,13 +55,18 @@ class SensorManager: NSObject,  LocationControllerDelegate,  MotionActivityContr
         return Static.instance
     }
 
+// MARK: getter/setter
+    var lastlocation: CLLocationCoordinate2D {
+        get { return m_lastlocation.location.coordinate }
+    }
+
 // MARK: methord
     private override init() {
         m_locationcontroller = LocationController()
         m_motionactivitycontroller = MotionActivityController()
         var loc = CLLocation()
         m_lastlocation = LastLocationInfo(stored: false, location: loc)
-
+        m_delegateList = Array()
         super.init()
         
         m_docrootpath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as? String
@@ -159,7 +169,9 @@ class SensorManager: NSObject,  LocationControllerDelegate,  MotionActivityContr
             m_activitysts = .MOVE
         }
 
-        didMoveCoordinates();
+        if (didMoveCoordinates()) {
+            executeDelegate()
+        }
     }
 
     func writeSensorLog() {
@@ -332,5 +344,16 @@ class SensorManager: NSObject,  LocationControllerDelegate,  MotionActivityContr
         LogTrace.sharedInstance.info()
         updatestatus()
         writeSensorLog()
+    }
+
+    func addDelegate(observer: SensorManagerDelegate) {
+        m_delegateList.append(observer)
+    }
+
+    func executeDelegate() {
+        let coordinate = m_lastlocation.location.coordinate
+        for delegate in m_delegateList {
+            delegate.updateLocation(coordinate)
+        }
     }
 }
