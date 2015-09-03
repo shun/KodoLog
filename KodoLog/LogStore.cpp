@@ -7,7 +7,6 @@
 //
 
 #include <fstream>
-#include <string>
 #include <iostream>
 #include "LogStore.h"
 #include "Utility.h"
@@ -21,12 +20,12 @@ LogStore::~LogStore() {
 }
 
 bool LogStore::load(const char*path) {
-    int latidx, lngidx, timestampidx, stepsidx, haccuracyidx, vaccuracyidx;
+    int latidx, lngidx, timestampidx, stepsidx, haccuracyidx, vaccuracyidx, timeidx;
     std::string lastlat, lastlng, lasttimestamp, laststeps;
     std::ifstream ifs(path);
     std::string line;
 
-    latidx = lngidx = timestampidx = stepsidx = haccuracyidx = vaccuracyidx = -1;
+    latidx = lngidx = timestampidx = stepsidx = haccuracyidx = vaccuracyidx = timeidx = -1;
     lastlat = lastlng = lasttimestamp = laststeps = "";
 
     if (ifs.fail()) {
@@ -65,6 +64,9 @@ bool LogStore::load(const char*path) {
                 else if (items.at(i) == "VAccuracy") {
                     vaccuracyidx = i;
                 }
+                else if (items.at(i) == "Time") {
+                    timeidx = i;
+                }
             }
             continue;
         }
@@ -82,6 +84,8 @@ bool LogStore::load(const char*path) {
 
             tmp = items.at(vaccuracyidx);
             storeitems.vaccuracy = atof(tmp.c_str());
+
+            storeitems.time = items.at(timeidx);
 
             m_logs.push_back(storeitems);
         }

@@ -10,6 +10,7 @@
 #define KodoLog_LogStore_h
 
 #include <stdint.h>
+#include <string>
 #include <vector>
 
 enum {
@@ -18,6 +19,7 @@ enum {
 };
 
 struct S_STOREITEMS {
+    std::string time;
     double latitude;
     double longitude;
     double haccuracy;
