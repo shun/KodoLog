@@ -35,16 +35,51 @@
     NSMutableArray * array = [NSMutableArray array];
 
     unsigned long size = m_logstore->count();
+    double lat, lng, hac, vac;
+    long epochsec = 0;
+
+    lat = lng = hac =  vac = 0.0;
 
     for (int i = 0; i < size; i++) {
         S_STOREITEMS items = m_logstore->at(i);
-        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys: @(items.latitude), @"latitude",
-                                                                        @(items.longitude), @"longitude",
-                                                                        @(items.haccuracy), @"haccuracy",
-                                                                        @(items.vaccuracy), @"vaccuracy",
+        lat = items.latitude;
+        lng = items.longitude;
+        hac = items.haccuracy;
+        vac = items.vaccuracy;
+        epochsec = items.epochsec;
+
+        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys: @(lat), @"latitude",
+                                                                        @(lng), @"longitude",
+                                                                        @(hac), @"haccuracy",
+                                                                        @(vac), @"vaccuracy",
+                                                                        @(epochsec), @"epochsec",
                                                                         nil];
         [array addObject: dic];
     }
     return array;
 }
+
+-(NSDictionary*)getItem:(unsigned long)index {
+    unsigned long size = m_logstore->count();
+
+    if (size < index) {
+        return nil;
+    }
+
+    S_STOREITEMS items = m_logstore->at((unsigned int)index);
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys: @(items.latitude), @"latitude",
+                         @(items.longitude), @"longitude",
+                         @(items.haccuracy), @"haccuracy",
+                         @(items.vaccuracy), @"vaccuracy",
+                         [NSString stringWithCString:items.time.c_str() encoding:NSUTF8StringEncoding], @"time",
+                         @(items.epochsec), @"epochsec",
+                         nil];
+
+    return dic;
+}
+
+-(unsigned long)getSize {
+    return m_logstore->count();
+}
+
 @end

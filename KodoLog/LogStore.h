@@ -12,6 +12,7 @@
 #include <stdint.h>
 #include <string>
 #include <vector>
+#include <time.h>
 
 enum {
     E_STOREITEMS_LAT = 0,
@@ -20,6 +21,7 @@ enum {
 
 struct S_STOREITEMS {
     std::string time;
+    time_t epochsec;
     double latitude;
     double longitude;
     double haccuracy;

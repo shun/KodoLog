@@ -13,8 +13,9 @@
 @interface CPPWrapper : NSObject
 -(BOOL)load:(NSString*)path;
 -(NSArray*)getItems;
+-(NSDictionary*)getItem:(unsigned long)index;
 -(void)clear;
-
+-(unsigned long)getSize;
 @end
 
 #endif

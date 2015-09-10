@@ -86,6 +86,7 @@ bool LogStore::load(const char*path) {
             storeitems.vaccuracy = atof(tmp.c_str());
 
             storeitems.time = items.at(timeidx);
+            storeitems.epochsec = cnvDateTimeToEpoch(storeitems.time, "%Y-%m-%d %H:%M:%S");
 
             m_logs.push_back(storeitems);
         }
