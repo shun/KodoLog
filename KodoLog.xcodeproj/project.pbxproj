@@ -16,6 +16,7 @@
 		240940231B4435F400A94056 /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240940221B4435F400A94056 /* LocationController.swift */; };
 		240940251B44360B00A94056 /* MotionActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240940241B44360B00A94056 /* MotionActivityController.swift */; };
 		240A48451B6DE1EA0022CAE3 /* GoogleMapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240A48441B6DE1EA0022CAE3 /* GoogleMapsViewController.swift */; };
+		243D04521B97438E0011CC7A /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243D04511B97438E0011CC7A /* CustomLabel.swift */; };
 		2453C6551B5D29600090810A /* AppMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453C6541B5D29600090810A /* AppMainController.swift */; };
 		2453C6571B5D29B30090810A /* FileUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453C6561B5D29B30090810A /* FileUploader.swift */; };
 		2453C65A1B5D34620090810A /* mainico_256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 2453C6591B5D34620090810A /* mainico_256x256.png */; };
@@ -26,6 +27,11 @@
 		2476E2831B6E5D4000A98CB9 /* route_48dp.png in Resources */ = {isa = PBXBuildFile; fileRef = 2476E2801B6E5D4000A98CB9 /* route_48dp.png */; };
 		2476E2861B6E5E8400A98CB9 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2476E2851B6E5E8400A98CB9 /* CustomButton.swift */; };
 		24900E131B86379C001E85A7 /* SensorLogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24900E121B86379C001E85A7 /* SensorLogManager.swift */; };
+		249899281B9884B70067CA88 /* CKCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 249899271B9884B70067CA88 /* CKCalendarView.m */; };
+		2498992D1B9888560067CA88 /* left_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 249899291B9888560067CA88 /* left_arrow.png */; };
+		2498992E1B9888560067CA88 /* left_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2498992A1B9888560067CA88 /* left_arrow@2x.png */; };
+		2498992F1B9888560067CA88 /* right_arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2498992B1B9888560067CA88 /* right_arrow.png */; };
+		249899301B9888560067CA88 /* right_arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2498992C1B9888560067CA88 /* right_arrow@2x.png */; };
 		249920001B8622A8006E6569 /* LogStore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 24991FFF1B8622A8006E6569 /* LogStore.cpp */; };
 		249920021B862354006E6569 /* CPPWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 249920011B862354006E6569 /* CPPWrapper.mm */; };
 		24B89A031B66747100A9DC98 /* LogTrace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B89A021B66747100A9DC98 /* LogTrace.swift */; };
@@ -57,6 +63,7 @@
 		240940221B4435F400A94056 /* LocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationController.swift; path = Sensor/LocationController.swift; sourceTree = "<group>"; };
 		240940241B44360B00A94056 /* MotionActivityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MotionActivityController.swift; path = Sensor/MotionActivityController.swift; sourceTree = "<group>"; };
 		240A48441B6DE1EA0022CAE3 /* GoogleMapsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleMapsViewController.swift; sourceTree = "<group>"; };
+		243D04511B97438E0011CC7A /* CustomLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		2453C6541B5D29600090810A /* AppMainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppMainController.swift; sourceTree = "<group>"; };
 		2453C6561B5D29B30090810A /* FileUploader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileUploader.swift; sourceTree = "<group>"; };
 		2453C6591B5D34620090810A /* mainico_256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mainico_256x256.png; path = Resources/mainico_256x256.png; sourceTree = "<group>"; };
@@ -67,6 +74,12 @@
 		2476E2801B6E5D4000A98CB9 /* route_48dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = route_48dp.png; path = Resources/route_48dp.png; sourceTree = "<group>"; };
 		2476E2851B6E5E8400A98CB9 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		24900E121B86379C001E85A7 /* SensorLogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorLogManager.swift; sourceTree = "<group>"; };
+		249899261B9884B70067CA88 /* CKCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CKCalendarView.h; path = objc/CKCalendarView.h; sourceTree = "<group>"; };
+		249899271B9884B70067CA88 /* CKCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CKCalendarView.m; path = objc/CKCalendarView.m; sourceTree = "<group>"; };
+		249899291B9888560067CA88 /* left_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = left_arrow.png; path = Resources/left_arrow.png; sourceTree = "<group>"; };
+		2498992A1B9888560067CA88 /* left_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "left_arrow@2x.png"; path = "Resources/left_arrow@2x.png"; sourceTree = "<group>"; };
+		2498992B1B9888560067CA88 /* right_arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = right_arrow.png; path = Resources/right_arrow.png; sourceTree = "<group>"; };
+		2498992C1B9888560067CA88 /* right_arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "right_arrow@2x.png"; path = "Resources/right_arrow@2x.png"; sourceTree = "<group>"; };
 		24991FFD1B86217A006E6569 /* LogStore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LogStore.h; sourceTree = "<group>"; };
 		24991FFF1B8622A8006E6569 /* LogStore.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LogStore.cpp; sourceTree = "<group>"; };
 		249920011B862354006E6569 /* CPPWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CPPWrapper.mm; sourceTree = "<group>"; };
@@ -130,6 +143,7 @@
 		24093FFC1B44359000A94056 /* KodoLog */ = {
 			isa = PBXGroup;
 			children = (
+				249899251B9883BE0067CA88 /* objc */,
 				24991FFE1B862253006E6569 /* objcpp */,
 				24991FFC1B8620D1006E6569 /* cpp */,
 				243687B11B6C941A0096DC23 /* App */,
@@ -228,6 +242,10 @@
 		2453C6581B5D33EE0090810A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				249899291B9888560067CA88 /* left_arrow.png */,
+				2498992A1B9888560067CA88 /* left_arrow@2x.png */,
+				2498992B1B9888560067CA88 /* right_arrow.png */,
+				2498992C1B9888560067CA88 /* right_arrow@2x.png */,
 				2476E27E1B6E5D4000A98CB9 /* gps_circle_48dp.png */,
 				2476E27F1B6E5D4000A98CB9 /* location_48dp.png */,
 				2476E2801B6E5D4000A98CB9 /* route_48dp.png */,
@@ -241,8 +259,18 @@
 			isa = PBXGroup;
 			children = (
 				2476E2851B6E5E8400A98CB9 /* CustomButton.swift */,
+				243D04511B97438E0011CC7A /* CustomLabel.swift */,
 			);
 			name = "UI-Custom";
+			sourceTree = "<group>";
+		};
+		249899251B9883BE0067CA88 /* objc */ = {
+			isa = PBXGroup;
+			children = (
+				249899261B9884B70067CA88 /* CKCalendarView.h */,
+				249899271B9884B70067CA88 /* CKCalendarView.m */,
+			);
+			name = objc;
 			sourceTree = "<group>";
 		};
 		24991FFC1B8620D1006E6569 /* cpp */ = {
@@ -381,12 +409,16 @@
 			files = (
 				240940051B44359000A94056 /* Main.storyboard in Resources */,
 				2409400A1B44359000A94056 /* LaunchScreen.xib in Resources */,
+				2498992F1B9888560067CA88 /* right_arrow.png in Resources */,
 				2453C65A1B5D34620090810A /* mainico_256x256.png in Resources */,
 				240940071B44359000A94056 /* Images.xcassets in Resources */,
 				2476E2821B6E5D4000A98CB9 /* location_48dp.png in Resources */,
+				2498992E1B9888560067CA88 /* left_arrow@2x.png in Resources */,
 				2476E2811B6E5D4000A98CB9 /* gps_circle_48dp.png in Resources */,
+				2498992D1B9888560067CA88 /* left_arrow.png in Resources */,
 				2453C65C1B5D393D0090810A /* mainico_120x120.png in Resources */,
 				2476E2831B6E5D4000A98CB9 /* route_48dp.png in Resources */,
+				249899301B9888560067CA88 /* right_arrow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -437,9 +469,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				249899281B9884B70067CA88 /* CKCalendarView.m in Sources */,
 				249920001B8622A8006E6569 /* LogStore.cpp in Sources */,
 				240940231B4435F400A94056 /* LocationController.swift in Sources */,
 				24B89A031B66747100A9DC98 /* LogTrace.swift in Sources */,
+				243D04521B97438E0011CC7A /* CustomLabel.swift in Sources */,
 				24900E131B86379C001E85A7 /* SensorLogManager.swift in Sources */,
 				2453C6571B5D29B30090810A /* FileUploader.swift in Sources */,
 				240940251B44360B00A94056 /* MotionActivityController.swift in Sources */,
