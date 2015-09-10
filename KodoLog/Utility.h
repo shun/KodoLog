@@ -12,6 +12,7 @@
 #include <vector>
 #include <string>
 #include <sstream>
+#include <time.h>
 
 unsigned long split(const std::string& line, char delimiter, std::vector<std::string>&elements) {
 
@@ -22,5 +23,29 @@ unsigned long split(const std::string& line, char delimiter, std::vector<std::st
         elements.push_back(field);
     }
     return elements.size();
+}
+
+time_t cnvDateTimeToEpoch(const std::string &datetime, const std::string &format) {
+    return cnvDateTimeToEpoch(datetime.c_str(), format.c_str());
+}
+
+time_t cnvDateTimeToEpoch(const char *datetime, const char *format) {
+    time_t epochsec = -1;
+    struct tm tm;
+
+    if (strptime(datetime, format, &tm) == nullptr) {
+        return epochsec;
+    }
+
+    epochsec = mktime(&tm);
+    return epochsec;
+}
+
+std::string cnvEpochToDateTime(time_t epochsec, const char * format) {
+    const int bufsize = 30;
+    char datetime[bufsize];
+    struct tm * tm = localtime(&epochsec);
+    strftime(datetime, bufsize, format, tm);
+    return std::string(datetime);
 }
 #endif
